@@ -37,23 +37,32 @@ export function* login(payload: any): any {
         yield put(authActions.requestUserData())
         const data = yield call(authAPI.login, payload.email, payload.password, payload.rememberMe, payload.captcha)
         if (data.resultCode === ResultCodesEnum.Success) {
-            yield put(getUserData())
+            yield call(getUserData)
         } else {
             if (data.resultCode === ResultCodeForCaptchaEnum.CaptchaIsRequired) {
-                yield put(getCaptchaUrl())
+                yield call(getCaptchaUrl)
             }
+        }
+    } catch (error) {
+        yield put(authActions.requestUserDataFailed())
+    }
+}
+export function* logout(): any {
+    try {
+        yield put(authActions.requestUserData())
+        const data = yield call(authAPI.logout)
+        if (data.data.resultCode === 0) {
+            yield put(authActions.requestUserDataSuccess(null, null, null, false))
         }
     } catch {
         yield put(authActions.requestUserDataFailed())
     }
 }
 
-
-
-
 export function* userDataWatcher() {
     // @ts-ignore
     yield takeEvery('FETCHED_LOGIN', login);
+    yield takeEvery('FETCHED_LOGOUT', logout);
     yield takeEvery('FETCHED_USER_DATA', getUserData);
     yield takeEvery('FETCHED_CAPTCHA_URL', getCaptchaUrl);
 }

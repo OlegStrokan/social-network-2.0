@@ -29,15 +29,12 @@ export const usersReducer = (state = initialState, action: ActionsTypes): Initia
             return {...state, loading: true}
         }
         case 'REQUEST_USERS_SUCCESS': {
-            return {...state, users: action.users.items, totalUsersCount: action.users.totalCount}
+            return {...state, users: action.users.items, totalUsersCount: action.users.totalCount, loading: false}
         }
-        case 'SN/USERS/SET_CURRENT_PAGE': {
-            return {...state, currentPage: action.currentPage}
+        case 'SET_CURRENT_PAGE': {
+            return {...state, currentPage: action.currentPage,  loading: false}
         }
-        case 'SN/USERS/TOGGLE_IS_FETCHING': {
-            return {...state, isFetching: action.isFetching}
-        }
-        case 'SN/USERS/TOGGLE_IS_FOLLOWING_PROGRESS': {
+        case 'TOGGLE_IS_FOLLOWING_PROGRESS': {
             return {
                 ...state,
                 followingInProgress: action.isFetching
@@ -59,10 +56,9 @@ export const usersActions = {
     requestUsers: ( ) => ({type: 'REQUEST_USERS'} as const),
     requestUsersSuccess: (users: any) => ({type: 'REQUEST_USERS_SUCCESS', users} as const),
     requestUsersFailed: ( ) => ({type: 'REQUEST_USERS_FAILED'} as const),
-    setCurrentPage: (currentPage: number) => ({type: 'SN/USERS/SET_CURRENT_PAGE', currentPage} as const),
-    toggleIsFetching: (isFetching: boolean) => ({type: 'SN/USERS/TOGGLE_IS_FETCHING', isFetching} as const),
+    setCurrentPage: (currentPage: number) => ({type: 'SET_CURRENT_PAGE', currentPage} as const),
     toggleFollowingProgress: (isFetching: boolean, userId: number) => ({
-        type: 'SN/USERS/TOGGLE_IS_FOLLOWING_PROGRESS', isFetching, userId} as const),
+        type: 'TOGGLE_IS_FOLLOWING_PROGRESS', isFetching, userId} as const),
     fetchedUsers: (currentPage: number, pageSize: number) => ({type: 'FETCHED_USERS', currentPage, pageSize} as const),
     fetchedFollow: (userId: number) => ({type: 'FETCHED_FOLLOW', userId} as const),
     fetchedUnfollow: (userId: number) => ({type: 'FETCHED_UNFOLLOW', userId} as const),

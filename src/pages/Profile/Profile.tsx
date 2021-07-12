@@ -17,49 +17,38 @@ import {useDispatch, useSelector} from "react-redux";
 import {getUserDataSelector} from "../../redux/auth/selectors";
 import {getProfileDataSelector} from "../../redux/profile/selectors";
 import {profileActions} from "../../redux/profile/reducer";
-import {useHistory} from "react-router-dom";
+import {RouteComponentProps, useHistory, useParams} from "react-router-dom";
+import {appActions} from "../../redux/app/reducer";
 
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        root: {
-            flexGrow: 1,
-        },
-        content: {
-            marginRight: theme.spacing(2),
-        },
-        userImg: {
+const useStyles = makeStyles((theme: Theme) => ({
+    root: {
+        flexGrow: 1,
+    },
+    content: {
+        marginRight: theme.spacing(2),
+    },
+    userImg: {
 
-        }
-    }),
-);
+    }
+}))
 
 
 export const Profile: React.FC = () => {
     const classes = useStyles();
-    const data = useSelector(getProfileDataSelector)
     const dispatch = useDispatch()
-    const history = useHistory()
-    const userId = useSelector(getUserDataSelector).userId
-
-
+    const userId = 14037
     useEffect(() => {
-        if (!userId) {
-                history.push("/login");
-        }
-        // @ts-ignore
-        dispatch(profileActions.fetchedProfileData(userId))
-    })
+        debugger
+            dispatch(profileActions.fetchedProfileData(userId))
+    },[dispatch])
 
     const [editMode, setEditMode] = useState(false)
 
-    if (!data.profile) {
-        return <Preloader/>
-    }
 
     return (
         <Card className={classes.root}>
             <CardContent className={classes.content}>
-                <img src={data.profile.photos.large || userPhoto} className={classes.userImg}/>
+             hello
 
             </CardContent>
         </Card>

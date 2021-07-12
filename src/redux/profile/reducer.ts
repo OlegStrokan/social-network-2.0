@@ -40,6 +40,7 @@ export const profileReducer = (state = initialState, action: ActionsType): Profi
             }
         }
         case 'REQUEST_USER_PROFILE_SUCCESS': {
+            debugger
             return {
                 ...state,
                 profile: action.profile,
@@ -82,7 +83,7 @@ export const profileActions = {
     requestProfileDataFailed: ( ) => ({type: 'REQUEST_USER_PROFILE_FAILED'} as const),
     requestPhotoSuccess: (photos: PhotosType) => ({type: 'REQUEST_PHOTO_SUCCESS', photos} as const),
     fetchedProfileData: ( userId: number) => ({type: 'FETCHED_USER_PROFILE', userId} as const),
-    fetchedStatus: ( status: string ) => ({type: 'FETCHED_STATUS', status} as const),
+    fetchedStatus: ( userId: number ) => ({type: 'FETCHED_STATUS', userId} as const),
     fetchedPhoto: ( photos: PhotosType ) => ({type: 'FETCHED_PHOTO', photos} as const),
 }
 

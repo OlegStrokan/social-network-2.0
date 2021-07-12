@@ -8,6 +8,7 @@ type PropsType = {
     user: UserType,
     unfollow: (userId: number) => void,
     follow: (userId: number) => void,
+    followingInProgress: Array<number>,
 }
 
 const useStyles = makeStyles((theme) => ({
@@ -20,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export const User: React.FC<PropsType> = ({user, unfollow, follow}) => {
+export const User: React.FC<PropsType> = ({user, unfollow, follow, followingInProgress}) => {
 
     const classes = useStyles();
     return (
@@ -32,16 +33,18 @@ export const User: React.FC<PropsType> = ({user, unfollow, follow}) => {
                        </NavLink>
                     </div>
                      <div>
-                        {user.followed
-                            ? <button
-                                      onClick={() => {
-                                          unfollow(user.id)
-                                      }}>
-                                Unfollow</button>
-                            : <button onClick={() => {
-                                          follow(user.id)
-                                      }}>
-                                Follow</button>}
+                       {user.followed
+                           ? <button disabled={followingInProgress
+                               .some(id => id === user.id)}
+                                     onClick={() => {
+                                         unfollow(user.id)
+                                     }}>
+                               Unfollow</button>
+                           : <button disabled={followingInProgress.some(id => id === user.id)}
+                                     onClick={() => {
+                                         follow(user.id)
+                                     }}>
+                               Follow</button>}
 
                     </div>
                 </span>

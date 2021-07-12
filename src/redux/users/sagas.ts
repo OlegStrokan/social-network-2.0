@@ -6,14 +6,14 @@ import {usersAPI} from "../../api/social-network-api/users-api";
 export function* getUsers (payload: any): any {
     try {
         yield put(usersActions.requestUsers())
+        yield put(usersActions.setCurrentPage(payload.currentPage))
         const data = yield call(usersAPI.getUsers, payload.currentPage, payload.pageSize)
         yield put(usersActions.requestUsersSuccess(data))
-    }
-    catch (error) {
+    } catch (error) {
         yield put(usersActions.requestUsersFailed())
     }
-
 }
+
 export function* follow (payload: any): any {
     try {
         yield put(usersActions.requestUsers())

@@ -45,7 +45,6 @@ export const Login = () => {
     let [rememberMe, setRememberMe] = useState(false);
 
     const onSubmit = () => {
-        debugger
         dispatch(authActions.fetchedLogin(email, password, rememberMe, captchaUrl))
     }
     if (isAuth) return <Redirect to="/profile"/>
@@ -99,12 +98,12 @@ export const Login = () => {
                 </Button>
                 <Grid container>
                     <Grid item xs>
-                        <Link href="#" variant="body2">
+                        <Link href="https://social-network.samuraijs.com/login" variant="body2">
                             Forgot password?
                         </Link>
                     </Grid>
                     <Grid item>
-                        <Link href="#" variant="body2">
+                        <Link href="https://social-network.samuraijs.com/signUp" variant="body2">
                             {"Don't have an account? Sign Up"}
                         </Link>
                     </Grid>

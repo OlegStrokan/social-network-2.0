@@ -39,6 +39,7 @@ export const authActions = {
     fetchedUserData: ( ) => ({type: 'FETCHED_USER_DATA'} as const),
     fetchedCaptchaUrl: ( ) => ({type: 'FETCHED_CAPTCHA_URL'} as const),
     fetchedLogin: ( email: string, password: string, rememberMe: boolean, captcha: string | null) => ({type: 'FETCHED_LOGIN', email, password, rememberMe, captcha} as const),
+    fetchedLogout: () => ({type: 'FETCHED_LOGOUT'} as const),
 }
 
 export type AuthStateType = typeof initialState

@@ -2,16 +2,16 @@ import {takeEvery, put, call, select} from "redux-saga/effects";
 import {profileAPI} from "../../api/social-network-api/profile-api";
 import {profileActions} from "./reducer";
 import {AppStateType} from "../store";
-import {getUserData} from "../auth/sagas";
-
 
 export function* getProfile(userId: any): any{
     try {
+        debugger
         yield put(profileActions.requestProfileData())
         const data = yield call(profileAPI.getProfile, userId)
         yield put(profileActions.requestUserProfileSuccess(data))
     }
     catch (error) {
+        debugger
         yield put(profileActions.requestProfileDataFailed())
     }
 }
@@ -68,7 +68,7 @@ export function* saveProfile(profile: any): any {
     }
 }
 
-export function* profileDataWatcher() {
+export function profileDataWatcher() {
     // @ts-ignore
     takeEvery('FETCHED_USER_PROFILE',getProfile)
     takeEvery('FETCHED_STATUS',getStatus)

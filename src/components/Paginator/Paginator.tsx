@@ -1,4 +1,6 @@
 import React, {useState} from 'react'
+import {makeStyles} from "@material-ui/core";
+import cn from 'classnames'
 
 type PropsType = {
     totalItemsCount: number
@@ -8,10 +10,26 @@ type PropsType = {
     portionSize?: number
 }
 
+const useStyles = makeStyles((theme) => ({
+    paginator: {
+        margin: '10px',
+    },
+    pageNumber: {
+        padding: '2px',
+        border: '1px solid grey',
+    },
+    selectedPage: {
+        fontWeight: 'bold',
+        borderColor: 'black',
+    }
+}));
+
+
 export const Paginator: React.FC<PropsType> = ({totalItemsCount, pageSize,
                                           currentPage = 1,
                                           onPageChanged = x => x,
                                           portionSize = 10}) => {
+    const classes = useStyles();
 
     let pagesCount = Math.ceil(totalItemsCount / pageSize);
 
@@ -27,14 +45,16 @@ export const Paginator: React.FC<PropsType> = ({totalItemsCount, pageSize,
     let rightPortionPageNumber = portionNumber * portionSize;
 
 
-    return <div >
+    return <div className={cn(classes.paginator)}>
         { portionNumber > 1 &&
         <button onClick={() => { setPortionNumber(portionNumber - 1) }}>PREV</button> }
 
         {pages
             .filter(p => p >= leftPortionPageNumber && p<=rightPortionPageNumber)
             .map((p) => {
-                return <span
+                return <span className={ cn({
+                    [classes.selectedPage]: currentPage === p
+                }, classes.pageNumber) }
                              key={p}
                              onClick={(e) => {
                                  onPageChanged(p);
@@ -42,7 +62,5 @@ export const Paginator: React.FC<PropsType> = ({totalItemsCount, pageSize,
             })}
         { portionCount > portionNumber &&
         <button onClick={() => { setPortionNumber(portionNumber + 1) }}>NEXT</button> }
-
-
     </div>
 }
