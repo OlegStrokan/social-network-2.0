@@ -5,12 +5,14 @@ import rootSaga from "./sagaRoot";
 import {usersReducer} from "./users/reducer";
 import {appReducer} from "./app/reducer";
 import {profileReducer} from "./profile/reducer";
+import chatReducer from "./chat/reducer";
 
 let rootReducer = combineReducers({
     auth: authReducer,
     users: usersReducer,
     profile: profileReducer,
     app: appReducer,
+    chat: chatReducer,
 })
 
 type RootReducerType = typeof rootReducer; // (globalstate: AppStateType) => AppStateType

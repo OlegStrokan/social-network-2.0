@@ -11,7 +11,7 @@ import {getInitializeAppData} from "./redux/app/selectors";
 import {Preloader} from "./components/Preloader/Preloader";
 import {appActions} from "./redux/app/reducer";
 import {Profile} from "./pages/Profile/Profile";
-import {Chat} from "./pages/Chat/Chat";
+import {ChatPage} from "./pages/Chat/ChatPage";
 
 const useStyles = makeStyles((theme) => ({
   rootOpen: {
@@ -71,7 +71,7 @@ export function App() {
       <Route path='/profile'
              render={() => <Profile/>}/>
       <Route path='/chat'
-             render={() => <Chat/>}/>
+             render={() => <ChatPage/>}/>
       <Route path='*'
              render={() => <div>404 NOT FOUND</div>}/>
     </div>

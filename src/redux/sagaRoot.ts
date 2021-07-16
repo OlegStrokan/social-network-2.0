@@ -3,6 +3,7 @@ import {userDataWatcher} from "./auth/sagas";
 import {getUsersWatcher} from "./users/sagas";
 import {initializeAppWatcher} from "./app/sagas";
 import {profileDataWatcher} from "./profile/sagas";
+import {chatWatcher} from "./chat/sagas";
 
 export default function* rootSaga() {
     yield all([
@@ -10,5 +11,6 @@ export default function* rootSaga() {
         getUsersWatcher(),
         initializeAppWatcher(),
         profileDataWatcher(),
+        chatWatcher(),
     ])
 }

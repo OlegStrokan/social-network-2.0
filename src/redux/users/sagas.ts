@@ -7,7 +7,8 @@ export function* getUsers (payload: any): any {
     try {
         yield put(usersActions.requestUsers())
         yield put(usersActions.setCurrentPage(payload.currentPage))
-        const data = yield call(usersAPI.getUsers, payload.currentPage, payload.pageSize)
+        yield put(usersActions.setFilter({term: payload.term,friend: payload.friend}))
+        const data = yield call(usersAPI.getUsers, payload.currentPage, payload.pageSize, payload.term, payload.friend)
         yield put(usersActions.requestUsersSuccess(data))
     } catch (error) {
         yield put(usersActions.requestUsersFailed())
@@ -16,6 +17,7 @@ export function* getUsers (payload: any): any {
 
 export function* follow (payload: any): any {
     try {
+        debugger
         yield put(usersActions.requestUsers())
         const data = yield call(usersAPI.follow, payload.userId)
         yield put(usersActions.followSuccess(data))
@@ -28,6 +30,7 @@ export function* follow (payload: any): any {
 
 export function* unfollow (payload: any): any {
     try {
+        debugger
         yield put(usersActions.requestUsers())
         const data = yield call(usersAPI.unfollow, payload.userId)
         yield put(usersActions.unfollowSuccess(data))

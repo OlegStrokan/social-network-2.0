@@ -10,7 +10,11 @@ const initialState = {
     isFetching: true,
     loading: false,
     error: false,
-    followingInProgress: [] as Array<number>, //array of users ids,
+    followingInProgress: [] as Array<number>,
+    filter: {
+        term: '',
+        friend: null as null | boolean,
+    },
 }
 
 export const usersReducer = (state = initialState, action: ActionsTypes): InitialState => {
@@ -42,6 +46,9 @@ export const usersReducer = (state = initialState, action: ActionsTypes): Initia
                     : state.followingInProgress.filter(id => id !== action.userId)
             }
         }
+        case 'SET_FILTER': {
+            return {...state, filter: action.payload, loading: false}
+        }
         case 'REQUEST_USERS_FAILED': {
             return {...state, error: true}
         }
@@ -57,12 +64,14 @@ export const usersActions = {
     requestUsersSuccess: (users: any) => ({type: 'REQUEST_USERS_SUCCESS', users} as const),
     requestUsersFailed: ( ) => ({type: 'REQUEST_USERS_FAILED'} as const),
     setCurrentPage: (currentPage: number) => ({type: 'SET_CURRENT_PAGE', currentPage} as const),
+    setFilter: (filter: FilterType) => ({type: 'SET_FILTER', payload: filter} as const),
     toggleFollowingProgress: (isFetching: boolean, userId: number) => ({
         type: 'TOGGLE_IS_FOLLOWING_PROGRESS', isFetching, userId} as const),
-    fetchedUsers: (currentPage: number, pageSize: number) => ({type: 'FETCHED_USERS', currentPage, pageSize} as const),
+    fetchedUsers: (currentPage: number, pageSize: number, term: string = '', friend: boolean | null  = null) => ({type: 'FETCHED_USERS', currentPage, pageSize, term, friend} as const),
     fetchedFollow: (userId: number) => ({type: 'FETCHED_FOLLOW', userId} as const),
     fetchedUnfollow: (userId: number) => ({type: 'FETCHED_UNFOLLOW', userId} as const),
 }
 
 export type InitialState = typeof initialState
+export type FilterType = typeof initialState.filter
 type ActionsTypes = InferActionsTypes<typeof usersActions>

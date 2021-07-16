@@ -38,7 +38,6 @@ export const Profile: React.FC = () => {
     const dispatch = useDispatch()
     const userId = 14037
     useEffect(() => {
-        debugger
             dispatch(profileActions.fetchedProfileData(userId))
     },[dispatch])
 

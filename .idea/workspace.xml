@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eb5efab3-75ac-4b03-b631-fe1de65d016b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pages/Chat/Chat.tsx" afterDir="false" />
+    <list default="true" id="eb5efab3-75ac-4b03-b631-fe1de65d016b" name="Default Changelist" comment="changed redux logic, add some request to api">
+      <change afterPath="$PROJECT_DIR$/src/api/social-network-api/chat-api.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Chat/ChatPage.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Users/UsersSearchForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/chat/reducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/chat/sagas.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/chat/selectors.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/social-network-api/auth-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/social-network-api/auth-api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/social-network-api/profile-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/social-network-api/profile-api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Paginator/Paginator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Paginator/Paginator.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Login/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/social-network-api/users-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/social-network-api/users-api.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Profile/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Profile/Profile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Users/User.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Users/User.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Users/Users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Users/Users.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/auth/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth/reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/auth/sagas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth/sagas.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/profile/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile/reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/profile/sagas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile/sagas.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/sagaRoot.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/sagaRoot.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/users/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users/reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/users/sagas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users/sagas.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +40,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/redux" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -53,9 +53,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/redux" />
+      <recent name="$PROJECT_DIR$/src/pages" />
+      <recent name="$PROJECT_DIR$/src/api/social-network-api" />
+      <recent name="$PROJECT_DIR$/src/pages/Users" />
       <recent name="$PROJECT_DIR$/src/components/Navbar" />
-      <recent name="$PROJECT_DIR$/src/utils" />
-      <recent name="$PROJECT_DIR$/src/redux/users" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -90,7 +91,7 @@
       <workItem from="1625210783698" duration="34312000" />
       <workItem from="1625820540510" duration="3329000" />
       <workItem from="1625827541964" duration="9043000" />
-      <workItem from="1626084739861" duration="1102000" />
+      <workItem from="1626084739861" duration="13534000" />
     </task>
     <task id="LOCAL-00001" summary="Added users, basic profile and login pages. Added auth/me. Added theme.ts, added types.ts">
       <created>1625421466958</created>
@@ -99,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625421466962</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="changed redux logic, add some request to api">
+      <created>1626109023315</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1626109023315</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,7 +127,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added users, basic profile and login pages. Added auth/me. Added theme.ts, added types.ts" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added users, basic profile and login pages. Added auth/me. Added theme.ts, added types.ts" />
+    <MESSAGE value="changed redux logic, add some request to api" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed redux logic, add some request to api" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
