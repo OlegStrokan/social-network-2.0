@@ -3,15 +3,13 @@ import {profileAPI} from "../../api/social-network-api/profile-api";
 import {profileActions} from "./reducer";
 import {AppStateType} from "../store";
 
-export function* getProfile(userId: any): any{
+export function* getProfile(payload: any): any{
     try {
-        debugger
         yield put(profileActions.requestProfileData())
-        const data = yield call(profileAPI.getProfile, userId)
+        const data = yield call(profileAPI.getProfile, payload.userId)
         yield put(profileActions.requestUserProfileSuccess(data))
     }
     catch (error) {
-        debugger
         yield put(profileActions.requestProfileDataFailed())
     }
 }
@@ -69,10 +67,9 @@ export function* saveProfile(profile: any): any {
 }
 
 export function profileDataWatcher() {
-    // @ts-ignore
     takeEvery('FETCHED_USER_PROFILE',getProfile)
     takeEvery('FETCHED_STATUS',getStatus)
-    takeEvery('FETCHED_STATUS',updateStatus)
+    takeEvery('FETCHED_NEW_STATUS',updateStatus)
     takeEvery('FETCHED_PHOTO',savePhoto)
-    takeEvery('FETCHED_USER_PROFILE',saveProfile)
+    takeEvery('FETCHED_NEW_USER_PROFILE',saveProfile)
 }

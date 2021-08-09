@@ -8,8 +8,7 @@ let _newMessageHandler: ((messages: ChatMessageAPIType[]) => void) | null = null
 export function* newMessageHandlerCreator(payload: any): any {
     if (_newMessageHandler === null) {
         _newMessageHandler = (messages) => {
-            // @ts-ignore
-            yield put(chatActions.messagesReceived(messages))
+            //yield put(chatActions.messagesReceived(messages))
         }
     }
     return _newMessageHandler
@@ -20,7 +19,7 @@ let _statusChangedHandler: ((status: StatusType) => void) | null = null
 export function* statusChangedHandlerCreator (payload: any): any {
     if (_statusChangedHandler === null) {
         _statusChangedHandler = (status) => {
-            yield put(chatActions.statusChanged(status))
+            //yield put(chatActions.statusChanged(status))
         }
     }
     return _statusChangedHandler

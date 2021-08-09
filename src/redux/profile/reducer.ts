@@ -83,7 +83,9 @@ export const profileActions = {
     requestProfileDataFailed: ( ) => ({type: 'REQUEST_USER_PROFILE_FAILED'} as const),
     requestPhotoSuccess: (photos: PhotosType) => ({type: 'REQUEST_PHOTO_SUCCESS', photos} as const),
     fetchedProfileData: ( userId: number) => ({type: 'FETCHED_USER_PROFILE', userId} as const),
+    fetchedNewProfileData: ( profile: ProfileType) => ({type: 'FETCHED_NEW_USER_PROFILE', profile} as const),
     fetchedStatus: ( userId: number ) => ({type: 'FETCHED_STATUS', userId} as const),
+    fetchedNewStatus: ( status: string ) => ({type: 'FETCHED_NEW_STATUS', status} as const),
     fetchedPhoto: ( photos: PhotosType ) => ({type: 'FETCHED_PHOTO', photos} as const),
 }
 

@@ -1,10 +1,9 @@
-import {UserType} from "../../types/types";
 import {InferActionsTypes} from "../store";
 import {updateObjectInArray} from "../../utils/object-helpers";
 
 const initialState = {
     users: [] as any,
-    pageSize: 10,
+    pageSize: 20,
     totalUsersCount: 0,
     currentPage: 1,
     isFetching: true,
@@ -67,7 +66,8 @@ export const usersActions = {
     setFilter: (filter: FilterType) => ({type: 'SET_FILTER', payload: filter} as const),
     toggleFollowingProgress: (isFetching: boolean, userId: number) => ({
         type: 'TOGGLE_IS_FOLLOWING_PROGRESS', isFetching, userId} as const),
-    fetchedUsers: (currentPage: number, pageSize: number, term: string = '', friend: boolean | null  = null) => ({type: 'FETCHED_USERS', currentPage, pageSize, term, friend} as const),
+    fetchedUsers: (currentPage: number, pageSize: number, term: string = '', friend: boolean | null  = null) =>
+        ({type: 'FETCHED_USERS', currentPage, pageSize, term, friend} as const),
     fetchedFollow: (userId: number) => ({type: 'FETCHED_FOLLOW', userId} as const),
     fetchedUnfollow: (userId: number) => ({type: 'FETCHED_UNFOLLOW', userId} as const),
 }
