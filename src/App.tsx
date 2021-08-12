@@ -15,6 +15,7 @@ import {ChatPage} from "./pages/Chat/ChatPage";
 
 const useStyles = makeStyles((theme) => ({
   rootOpen: {
+    backgroundColor: '#eeeeee',
     display: 'grid',
     gridTemplateColumns: '225px 1fr',
     gridTemplateRows: 'auto',
@@ -24,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
          "navbar content"`
   },
   rootClose: {
+    backgroundColor: '#eeeeee',
     display: 'grid',
     gridTemplateColumns: '1fr',
     gridTemplateRows: 'auto',
@@ -56,6 +58,7 @@ export function App() {
   },[])
 
   if (!isInit) {
+    debugger
     return <Preloader/>
   }
   return <div className={openMenu ? classes.rootOpen : classes.rootClose}>
@@ -68,12 +71,10 @@ export function App() {
              render={() => <Users/>}/>
       <Route path='/login'
              render={() => <Login/>}/>
-      <Route path='/profile'
+      <Route path='/profile/:userId?'
              render={() => <Profile/>}/>
       <Route path='/chat'
              render={() => <ChatPage/>}/>
-      <Route path='*'
-             render={() => <div>404 NOT FOUND</div>}/>
     </div>
   </div>
 }

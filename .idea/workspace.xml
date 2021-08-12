@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eb5efab3-75ac-4b03-b631-fe1de65d016b" name="Default Changelist" comment="changed redux logic, add some request to api">
-      <change afterPath="$PROJECT_DIR$/src/assets/images/userIcon.jpeg" afterDir="false" />
+    <list default="true" id="eb5efab3-75ac-4b03-b631-fe1de65d016b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/user.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/social-network-api/profile-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/social-network-api/profile-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Paginator/Paginator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Paginator/Paginator.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Profile/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Profile/Profile.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Users/User.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Users/User.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/chat/sagas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/chat/sagas.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Users/Users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Users/Users.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Users/UsersSearchForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Users/UsersSearchForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/profile/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile/reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/profile/sagas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile/sagas.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/users/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users/reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +93,7 @@
       <workItem from="1626936442092" duration="1187000" />
       <workItem from="1628271577126" duration="523000" />
       <workItem from="1628332103734" duration="2643000" />
-      <workItem from="1628498018862" duration="1372000" />
+      <workItem from="1628498018862" duration="20233000" />
     </task>
     <task id="LOCAL-00001" summary="Added users, basic profile and login pages. Added auth/me. Added theme.ts, added types.ts">
       <created>1625421466958</created>
@@ -108,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1626109023315</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fix profile page issue">
+      <created>1628499765695</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1628499765695</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,7 +137,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added users, basic profile and login pages. Added auth/me. Added theme.ts, added types.ts" />
     <MESSAGE value="changed redux logic, add some request to api" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed redux logic, add some request to api" />
+    <MESSAGE value="fix profile page issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix profile page issue" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -2,7 +2,7 @@ import React from 'react'
 import userPhoto from '../../assets/images/userIcon.jpeg'
 import {NavLink} from 'react-router-dom'
 import {UserType} from '../../types/types'
-import {Card, makeStyles} from "@material-ui/core";
+import {Button , makeStyles, Typography} from "@material-ui/core";
 
 type PropsType = {
     user: UserType,
@@ -13,16 +13,23 @@ type PropsType = {
 
 const useStyles = makeStyles((theme) => ({
    root: {
-       width: '100%',
        margin: '10px',
        display: 'flex',
-       justifyContent: 'space-around',
+       justifyContent: 'space-between',
+       alignItems: 'center',
+       borderBottom: '1px solid #eee'
    },
     userPhoto: {
         width: '50px',
         height: '50px',
         backgroundSize: 'cover',
         borderRadius: '50%',
+        margin: '10px 20px 10px 100px',
+    },
+    main: {
+        display: 'flex',
+        justifyContent: 'space-around',
+        alignItems: 'center',
     }
 }));
 
@@ -30,12 +37,12 @@ export const User: React.FC<PropsType> = ({user, unfollow, follow, followingInPr
 
     const classes = useStyles();
     return (
-        <Card className={classes.root}>
-            <div>
+        <div className={classes.root}>
+            <div className={classes.main}>
                 <NavLink to={'/profile/' + user.id}>
                     <img src={user.photos.small != null ? user.photos.small : userPhoto} className={classes.userPhoto}/>
                 </NavLink>
-                        <div>{user.name}</div>
+                        <Typography variant="h6">{user.name}</Typography>
             </div>
             <div>
                 {user.followed
@@ -45,12 +52,12 @@ export const User: React.FC<PropsType> = ({user, unfollow, follow, followingInPr
                                   unfollow(user.id)
                               }}>
                         Unfollow</button>
-                    : <button disabled={followingInProgress.some(id => id === user.id)}
+                    : <Button variant="contained" color="primary" disabled={followingInProgress.some(id => id === user.id)}
                               onClick={() => {
                                   follow(user.id)
                               }}>
-                        Follow</button>}
+                        Follow</Button>}
 
             </div>
-        </Card>)
+        </div>)
 }

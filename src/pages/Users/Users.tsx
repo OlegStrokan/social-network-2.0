@@ -5,7 +5,7 @@ import {FilterType, usersActions} from "../../redux/users/reducer";
 import {User} from "./User";
 import {UserType} from "../../types/types";
 import {Paginator} from "../../components/Paginator/Paginator";
-import {Card, makeStyles} from "@material-ui/core";
+import {Card, makeStyles, Typography} from "@material-ui/core";
 import {Preloader} from "../../components/Preloader/Preloader";
 import {UsersSearchForm} from "./UsersSearchForm";
 import queryString from "querystring";
@@ -16,6 +16,18 @@ const useStyles = makeStyles((theme) => ({
         padding: 0,
         margin: 0,
         width: '100%',
+    },
+    actions: {
+        margin: '10px',
+        padding: '25px',
+    },
+    users: {
+        margin: '10px',
+    },
+    notFound: {
+        padding: '30px',
+        display: 'flex',
+        justifyContent: 'center',
     }
 }));
 
@@ -74,7 +86,6 @@ export const Users: React.FC = () => {
         debugger
         dispatch(usersActions.fetchedUnfollow(userId));
     }
-
     const onPageChanged = (pageNumber: number) => {
         dispatch(usersActions.fetchedUsers(pageNumber, data.pageSize))
     }
@@ -87,17 +98,27 @@ export const Users: React.FC = () => {
     }
 
     return <Card className={classes.root}>
-        <UsersSearchForm onFilterChanged={onFilterChanged}/>
-        <Paginator currentPage={data.pageSize}
-                   totalItemsCount={data.totalUsersCount} pageSize={data.pageSize} onPageChanged={onPageChanged}/>
-        <div>
+        <Card className={classes.actions}>
+            <UsersSearchForm onFilterChanged={onFilterChanged}/>
+        </Card>
+        <Card className={classes.users}>
+            {data.users.length === 0 && <Card className={classes.notFound}>
+                <Typography variant="h5">User with this name not found...</Typography>
+            </Card>
+            }
             {
-                data.users.map((u: UserType) => <User follow={follow} unfollow={unfollow} user={u} followingInProgress={data.followingInProgress}
-                                     key={u.id}
+                data.users.map((u: UserType) => <User follow={follow} unfollow={unfollow} user={u}
+                                                      followingInProgress={data.followingInProgress}
+                                                      key={u.id}
 
                     />
                 )
             }
-        </div>
+        </Card>
+        {data.users.length !== 0 &&
+        <Card className={classes.actions}>
+            <Paginator currentPage={data.pageSize}
+                       totalItemsCount={data.totalUsersCount} pageSize={data.pageSize} onPageChanged={onPageChanged}/>
+        </Card>}
     </Card>
 };

@@ -40,7 +40,6 @@ export const profileReducer = (state = initialState, action: ActionsType): Profi
             }
         }
         case 'REQUEST_USER_PROFILE_SUCCESS': {
-            debugger
             return {
                 ...state,
                 profile: action.profile,

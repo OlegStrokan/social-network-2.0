@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {makeStyles} from "@material-ui/core";
+import {Button, makeStyles, Typography} from "@material-ui/core";
 import cn from 'classnames'
 
 type PropsType = {
@@ -13,14 +13,24 @@ type PropsType = {
 const useStyles = makeStyles((theme) => ({
     paginator: {
         margin: '10px',
+        display: 'flex',
+        justifyContent: 'center',
     },
     pageNumber: {
-        padding: '2px',
-        border: '1px solid grey',
+        padding: '10px 20px',
+        backgroundColor: '#ececec',
+        borderRadius: '3px',
+        margin: '8px',
+
     },
     selectedPage: {
         fontWeight: 'bold',
         borderColor: 'black',
+    },
+    button: {
+        padding: '10px 30px',
+        height: '50px',
+        marginTop: '7px',
     }
 }));
 
@@ -47,20 +57,20 @@ export const Paginator: React.FC<PropsType> = ({totalItemsCount, pageSize,
 
     return <div className={cn(classes.paginator)}>
         { portionNumber > 1 &&
-        <button onClick={() => { setPortionNumber(portionNumber - 1) }}>PREV</button> }
+        <Button variant="contained" color="primary" className={classes.button} onClick={() => { setPortionNumber(portionNumber - 1) }}>PREV</Button> }
 
         {pages
             .filter(p => p >= leftPortionPageNumber && p<=rightPortionPageNumber)
             .map((p) => {
-                return <span className={ cn({
+                return <Typography variant="subtitle1" className={ cn({
                     [classes.selectedPage]: currentPage === p
                 }, classes.pageNumber) }
                              key={p}
                              onClick={(e) => {
                                  onPageChanged(p);
-                             }}>{p}</span>
+                             }}>{p}</Typography>
             })}
         { portionCount > portionNumber &&
-        <button onClick={() => { setPortionNumber(portionNumber + 1) }}>NEXT</button> }
+        <Button variant="contained" color="primary" className={classes.button} onClick={() => { setPortionNumber(portionNumber + 1) }}>NEXT</Button> }
     </div>
 }

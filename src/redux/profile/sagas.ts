@@ -66,10 +66,10 @@ export function* saveProfile(profile: any): any {
     }
 }
 
-export function profileDataWatcher() {
-    takeEvery('FETCHED_USER_PROFILE',getProfile)
-    takeEvery('FETCHED_STATUS',getStatus)
-    takeEvery('FETCHED_NEW_STATUS',updateStatus)
-    takeEvery('FETCHED_PHOTO',savePhoto)
-    takeEvery('FETCHED_NEW_USER_PROFILE',saveProfile)
+export function* profileDataWatcher() {
+    yield takeEvery('FETCHED_USER_PROFILE', getProfile)
+    yield takeEvery('FETCHED_STATUS', getStatus)
+    yield takeEvery('FETCHED_NEW_STATUS', updateStatus)
+    yield takeEvery('FETCHED_PHOTO', savePhoto)
+    yield takeEvery('FETCHED_NEW_USER_PROFILE', saveProfile)
 }
