@@ -46,12 +46,12 @@ export const User: React.FC<PropsType> = ({user, unfollow, follow, followingInPr
             </div>
             <div>
                 {user.followed
-                    ? <button disabled={followingInProgress
+                    ? <Button variant="contained" color="primary" disabled={followingInProgress
                         .some(id => id === user.id)}
                               onClick={() => {
                                   unfollow(user.id)
                               }}>
-                        Unfollow</button>
+                        Unfollow</Button>
                     : <Button variant="contained" color="primary" disabled={followingInProgress.some(id => id === user.id)}
                               onClick={() => {
                                   follow(user.id)
