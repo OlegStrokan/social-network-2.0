@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {ChangeEvent, useEffect, useState} from 'react';
 import {Button, Card, CardContent, makeStyles, TextField, Theme, Typography} from "@material-ui/core";
 import {useDispatch, useSelector} from "react-redux";
 import {profileActions} from "../../redux/profile/reducer";
@@ -11,6 +11,13 @@ import {ContactsType} from "../../types/types";
 import FavoriteIcon from '@material-ui/icons/Favorite';
 
 const useStyles = makeStyles((theme: Theme) => ({
+    wrapper: {
+        margin: '0 10px',
+    },
+    background: {
+        backgroundColor: '#e9e9e9',
+        margin: '15px',
+    },
     wallpaper: {
         padding: 0,
     },
@@ -20,17 +27,16 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     profileInfo: {
         display: 'flex',
-        width: '90vw',
-        margin: '0 auto',
+        margin: '15px',
         justifyContent: 'flex-start',
+        backgroundColor: '#e9e9e9',
+        borderRadius: '5px',
     },
     posts: {
-        width: '100%',
-        margin: '10px',
+        margin: '20px',
         padding: '10px',
     },
     post: {
-        width: '100%',
         margin: '10px',
         padding: '10px',
         display: 'flex',
@@ -69,8 +75,17 @@ const useStyles = makeStyles((theme: Theme) => ({
         margin: '-150px 30px 0 0',
         padding: 0,
     },
+    profileImgButton: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-end',
+    },
+    profileButton: {
+        width: '180px',
+        marginTop: '20px',
+    },
     fullName: {
-        margin: '-70px 0 40px 0',
+        margin: '-80px 0 40px 0',
         color: '#f6f6f6',
     },
     line: {
@@ -79,8 +94,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     contacts: {
         margin: '10px 30px 0',
-    }
-
+    },
 }))
 
 export const Profile:React.FC = () => {
@@ -90,10 +104,18 @@ export const Profile:React.FC = () => {
     const profileData = useSelector(getProfileDataSelector);
     let userId = useParams<any>();
     let history = useHistory();
+    const isOwner = userId
 
     const [editMode, setEditMode] = useState(false)
 
     const [postMessage, setPostMessage] = useState('')
+
+    const onMainPhotoSelected = (e: ChangeEvent<HTMLInputElement>) => {
+        if (e.target.files && e.target.files.length) {
+            // @ts-ignore
+            dispatch(profileActions.fetchedPhoto(e.target.files[0]));
+        }
+    }
 
     const onAddPost = () => {
         dispatch(profileActions.addPost(postMessage))
@@ -126,13 +148,18 @@ export const Profile:React.FC = () => {
     }
 
     return (
-        <Card>
+        <Card className={classes.wrapper}>
             <CardContent className={classes.wallpaper}>
                 <img className={classes.wallpaperImg} src="https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701591408.jpg"/>
             </CardContent>
             <CardContent className={classes.profileInfo}>
-                <div>
+                <div className={classes.profileImgButton}>
                     <img className={classes.profileImg} src={profileData.profile?.photos.large || userPhoto}/>
+                    {isOwner &&
+                    <Button className={classes.profileButton} size="large" variant="contained" component="label" color="primary">Change image
+                        <input type="file" hidden onChange={onMainPhotoSelected}/>
+                    </Button>}
+
                 </div>
                 <div>
                     <Typography variant="h4" className={classes.fullName}>{profileData.profile.fullName}</Typography>
@@ -159,7 +186,7 @@ export const Profile:React.FC = () => {
                                 })}</Typography>
                 </div>
             </CardContent>
-            <Card>
+            <Card  className={classes.background}>
                 <CardContent className={classes.posts}>
                     <Card className={classes.addPostForm}>
                         <form noValidate autoComplete="off">

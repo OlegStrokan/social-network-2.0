@@ -39,7 +39,7 @@ export function* updateStatus(status: any): any {
 export function* savePhoto(file: any): any {
     try {
         yield put(profileActions.requestProfileData())
-        const data = yield call(profileAPI.savePhoto, file)
+        const data = yield call(profileAPI.savePhoto, file.photos)
         yield put(profileActions.requestPhotoSuccess(data))
     }
     catch (error) {

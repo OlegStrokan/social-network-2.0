@@ -18,14 +18,16 @@ const useStyles = makeStyles((theme) => ({
     },
     pageNumber: {
         padding: '10px 20px',
-        backgroundColor: '#ececec',
+        backgroundColor: '#d7d7d7',
         borderRadius: '3px',
         margin: '8px',
+        cursor: 'pointer',
 
     },
     selectedPage: {
         fontWeight: 'bold',
         borderColor: 'black',
+        cursor: 'pointer',
     },
     button: {
         padding: '10px 30px',

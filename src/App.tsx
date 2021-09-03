@@ -19,20 +19,26 @@ const useStyles = makeStyles((theme) => ({
     display: 'grid',
     gridTemplateColumns: '225px 1fr',
     gridTemplateRows: 'auto',
-    gridGap: '15px',
+    gridGap: '10px 0',
+    padding: 0,
+    margin: 0,
+    height: '100vh',
     gridTemplateAreas:
         `"header header"
-         "navbar content"`
+         "navbar content"`,
   },
   rootClose: {
     backgroundColor: '#eeeeee',
     display: 'grid',
+    gridGap: '10px 0',
     gridTemplateColumns: '1fr',
     gridTemplateRows: 'auto',
-    gridGap: '15px',
+    padding: 0,
+    margin: 0,
+    height: '100vh',
     gridTemplateAreas:
         `"header"
-         "content"`
+         "content"`,
   },
   header: {
     gridArea: 'header',

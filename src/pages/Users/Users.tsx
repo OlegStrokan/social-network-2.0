@@ -14,15 +14,16 @@ import {useHistory} from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
     root: {
         padding: 0,
-        margin: 0,
-        width: '100%',
+        margin: '0 10px',
     },
     actions: {
         margin: '10px',
         padding: '25px',
+        backgroundColor: '#e9e9e9',
     },
     users: {
         margin: '10px',
+        backgroundColor: '#e9e9e9',
     },
     notFound: {
         padding: '30px',
@@ -79,11 +80,9 @@ export const Users: React.FC = () => {
     }, [data.filter, data.currentPage, history])
 
     const follow = (userId: number) => {
-        debugger
         dispatch(usersActions.fetchedFollow(userId));
     }
     const unfollow = (userId: number) => {
-        debugger
         dispatch(usersActions.fetchedUnfollow(userId));
     }
     const onPageChanged = (pageNumber: number) => {

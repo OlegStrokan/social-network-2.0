@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
        display: 'flex',
        justifyContent: 'space-between',
        alignItems: 'center',
-       borderBottom: '1px solid #eee'
+       borderBottom: '3px solid #f7f7f7'
    },
     userPhoto: {
         width: '50px',
@@ -34,7 +34,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const User: React.FC<PropsType> = ({user, unfollow, follow, followingInProgress}) => {
-
     const classes = useStyles();
     return (
         <div className={classes.root}>

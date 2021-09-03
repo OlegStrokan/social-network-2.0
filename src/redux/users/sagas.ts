@@ -17,7 +17,6 @@ export function* getUsers (payload: any): any {
 
 export function* follow (payload: any): any {
     try {
-        debugger
         yield put(usersActions.requestUsers())
         const data = yield call(usersAPI.follow, payload.userId)
         yield put(usersActions.followSuccess(data))
@@ -30,7 +29,6 @@ export function* follow (payload: any): any {
 
 export function* unfollow (payload: any): any {
     try {
-        debugger
         yield put(usersActions.requestUsers())
         const data = yield call(usersAPI.unfollow, payload.userId)
         yield put(usersActions.unfollowSuccess(data))
