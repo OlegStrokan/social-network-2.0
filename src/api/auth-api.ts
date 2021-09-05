@@ -1,4 +1,4 @@
-import {APIResponseType, instance, ResultCodeForCaptchaEnum, ResultCodesEnum} from "../instance";
+import {APIResponseType, instance, ResultCodeForCaptchaEnum, ResultCodesEnum} from "./instance";
 
 type MeResponseType = {
     id: number,

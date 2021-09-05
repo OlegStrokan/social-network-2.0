@@ -1,6 +1,6 @@
 
 import {v1} from 'uuid'
-import {ChatMessageAPIType, StatusType} from "../../api/social-network-api/chat-api";
+import {ChatMessageAPIType, StatusType} from "../../api/chat-api";
 import {InferActionsTypes} from "../store";
 
 type ChatMessageType = ChatMessageAPIType & {id: string}

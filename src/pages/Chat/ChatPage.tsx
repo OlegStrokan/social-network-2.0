@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {sendMessage, startMessagesListening, stopMessagesListening} from "../../redux/chat/sagas";
 import {getChatData} from "../../redux/chat/selectors";
-import {ChatMessageAPIType} from "../../api/social-network-api/chat-api";
+import {ChatMessageAPIType} from "../../api/chat-api";
 
 
 export const ChatPage: React.FC = () => {

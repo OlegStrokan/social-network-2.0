@@ -1,5 +1,5 @@
 import {takeEvery, put, call, select} from "redux-saga/effects";
-import {profileAPI} from "../../api/social-network-api/profile-api";
+import {profileAPI} from "../../api/profile-api";
 import {profileActions} from "./reducer";
 import {AppStateType} from "../store";
 

@@ -28,7 +28,6 @@ export const Navbar: React.FC<NavbarProps> = () => {
     const toUsers = () => history.push("/users", { update: true });
     const toChat = () => history.push("/chat", { update: true });
     const toNews = () => history.push("/news", { update: true });
-    const toWeather = () => history.push("/weather", { update: true });
 
     return (
         <Card className={classes.root}>
@@ -56,12 +55,6 @@ export const Navbar: React.FC<NavbarProps> = () => {
                         <DraftsIcon />
                     </ListItemIcon>
                     <ListItemText primary="News" />
-                </ListItem>
-                <ListItem button onClick={toWeather}>
-                    <ListItemIcon>
-                        <DraftsIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Weather" />
                 </ListItem>
             </List>
         </Card>

@@ -12,6 +12,8 @@ import {Preloader} from "./components/Preloader/Preloader";
 import {appActions} from "./redux/app/reducer";
 import {Profile} from "./pages/Profile/Profile";
 import {ChatPage} from "./pages/Chat/ChatPage";
+import {weatherActions} from "./redux/weather/reducer";
+import {getWeatherDataSelector} from "./redux/weather/selectors";
 
 const useStyles = makeStyles((theme) => ({
   rootOpen: {
@@ -54,21 +56,23 @@ const useStyles = makeStyles((theme) => ({
 export function App() {
   const isInit = useSelector(getInitializeAppData)
   const authData = useSelector(getUserDataSelector)
+  const weatherData = useSelector(getWeatherDataSelector);
+
   const dispatch = useDispatch()
   const [openMenu, setOpenMenu] = useState<boolean>(false);
 
   const classes = useStyles();
 
   useEffect(() => {
-    dispatch(appActions.fetchedInitialized())
+    dispatch(appActions.fetchedInitialized());
+    dispatch(weatherActions.fetchedWeatherData('Prague'));
   },[])
 
   if (!isInit) {
-    debugger
     return <Preloader/>
   }
   return <div className={openMenu ? classes.rootOpen : classes.rootClose}>
-    <div className={classes.header}><Header authData={authData} openMenu={openMenu} setOpenMenu={setOpenMenu}/></div>
+    <div className={classes.header}><Header weatherData={weatherData} authData={authData} openMenu={openMenu} setOpenMenu={setOpenMenu}/></div>
     <div className={classes.navbar}>{openMenu && <Navbar/>}</div>
     <div className={classes.content}>
       <Route exact path='/'

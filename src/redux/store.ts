@@ -6,6 +6,7 @@ import {usersReducer} from "./users/reducer";
 import {appReducer} from "./app/reducer";
 import {profileReducer} from "./profile/reducer";
 import chatReducer from "./chat/reducer";
+import {weatherReducer} from "./weather/reducer";
 
 let rootReducer = combineReducers({
     auth: authReducer,
@@ -13,6 +14,7 @@ let rootReducer = combineReducers({
     profile: profileReducer,
     app: appReducer,
     chat: chatReducer,
+    weather: weatherReducer,
 })
 
 type RootReducerType = typeof rootReducer; // (globalstate: AppStateType) => AppStateType

@@ -1,16 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eb5efab3-75ac-4b03-b631-fe1de65d016b" name="Default Changelist" comment="new profile page. (delete post - doesn't work)">
+    <list default="true" id="eb5efab3-75ac-4b03-b631-fe1de65d016b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/api/weather-api.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/weather/reducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/weather/sagas.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/weather/selectors.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/social-network-api/profile-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/social-network-api/profile-api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Paginator/Paginator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Paginator/Paginator.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/social-network-api/auth-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/auth-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/social-network-api/chat-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/chat-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/social-network-api/profile-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/profile-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/social-network-api/security-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/security-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/social-network-api/users-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/users-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Chat/ChatPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Chat/ChatPage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Profile/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Profile/Profile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Users/User.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Users/User.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Users/Users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Users/Users.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/auth/sagas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth/sagas.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/chat/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/chat/reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/chat/sagas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/chat/sagas.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/profile/sagas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile/sagas.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/sagaRoot.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/sagaRoot.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/users/sagas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users/sagas.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +51,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/redux" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -49,11 +63,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/assets/images" />
       <recent name="$PROJECT_DIR$/src/redux" />
+      <recent name="$PROJECT_DIR$/src/assets/images" />
       <recent name="$PROJECT_DIR$/src/pages" />
       <recent name="$PROJECT_DIR$/src/api/social-network-api" />
       <recent name="$PROJECT_DIR$/src/pages/Users" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/api" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -93,7 +110,7 @@
       <workItem from="1628271577126" duration="523000" />
       <workItem from="1628332103734" duration="2643000" />
       <workItem from="1628498018862" duration="31846000" />
-      <workItem from="1630430963771" duration="12127000" />
+      <workItem from="1630430963771" duration="21870000" />
     </task>
     <task id="LOCAL-00001" summary="Added users, basic profile and login pages. Added auth/me. Added theme.ts, added types.ts">
       <created>1625421466958</created>
@@ -130,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628961149840</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="new profile page, changed design, added save photo button">
+      <created>1630667204206</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1630667204207</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,7 +178,8 @@
     <MESSAGE value="fix profile page issue" />
     <MESSAGE value="styles for users page, styles for profile page" />
     <MESSAGE value="new profile page. (delete post - doesn't work)" />
-    <option name="LAST_COMMIT_MESSAGE" value="new profile page. (delete post - doesn't work)" />
+    <MESSAGE value="new profile page, changed design, added save photo button" />
+    <option name="LAST_COMMIT_MESSAGE" value="new profile page, changed design, added save photo button" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

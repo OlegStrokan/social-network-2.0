@@ -82,7 +82,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     profileButton: {
         width: '180px',
-        marginTop: '20px',
+        margin: '20px 30px 0 0',
     },
     fullName: {
         margin: '-80px 0 40px 0',
@@ -97,16 +97,18 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
 }))
 
-export const Profile:React.FC = () => {
+export const Profile = () => {
     const classes = useStyles();
     const dispatch = useDispatch();
     const authData = useSelector(getUserDataSelector);
     const profileData = useSelector(getProfileDataSelector);
     let userId = useParams<any>();
     let history = useHistory();
-    const isOwner = userId
+    let isOwner = !userId.userId;
 
-    const [editMode, setEditMode] = useState(false)
+
+
+    const [editMode, setEditMode] = useState(false);
 
     const [postMessage, setPostMessage] = useState('')
 
@@ -188,13 +190,18 @@ export const Profile:React.FC = () => {
             </CardContent>
             <Card  className={classes.background}>
                 <CardContent className={classes.posts}>
+                    {isOwner &&
                     <Card className={classes.addPostForm}>
                         <form noValidate autoComplete="off">
                             <Typography variant="h5" className={classes.addPostText}>Add new post</Typography>
-                        <TextField value={postMessage} onChange={(e) => setPostMessage(e.target.value)} className={classes.addPostInput} id="standard-basic" variant="outlined" label="Enter your text..."/>
-                            <Button onClick={onAddPost} variant="contained" color="primary" className={classes.addPostButton}>Add post</Button>
-                    </form>
+                            <TextField value={postMessage} onChange={(e) => setPostMessage(e.target.value)}
+                                       className={classes.addPostInput} id="standard-basic" variant="outlined"
+                                       label="Enter your text..."/>
+                            <Button onClick={onAddPost} variant="contained" color="primary"
+                                    className={classes.addPostButton}>Add post</Button>
+                        </form>
                     </Card>
+                    }
                     {profileData.posts.map((post) => <Card className={classes.post} key={post.id}>
                         <img className={classes.postImg} src={profileData.profile?.photos.large || userPhoto}/>
                         <Typography variant="subtitle2" className={classes.postMessage}>{post.message}</Typography>

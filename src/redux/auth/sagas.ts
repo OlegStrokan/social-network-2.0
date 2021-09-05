@@ -1,8 +1,8 @@
 import {call, put, takeEvery } from "redux-saga/effects";
 import {authActions} from "./reducer";
-import {authAPI} from "../../api/social-network-api/auth-api";
+import {authAPI} from "../../api/auth-api";
 import {ResultCodeForCaptchaEnum, ResultCodesEnum} from "../../api/instance";
-import {securityAPI} from "../../api/social-network-api/security-api";
+import {securityAPI} from "../../api/security-api";
 
 
 

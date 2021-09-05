@@ -1,5 +1,5 @@
 import {takeEvery, put, call} from "redux-saga/effects";
-import {chatAPI, ChatMessageAPIType, StatusType} from "../../api/social-network-api/chat-api";
+import {chatAPI, ChatMessageAPIType, StatusType} from "../../api/chat-api";
 import {chatActions} from "./reducer";
 
 

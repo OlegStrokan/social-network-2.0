@@ -1,6 +1,6 @@
 import {call, put, takeEvery} from "redux-saga/effects";
 import {usersActions} from "./reducer";
-import {usersAPI} from "../../api/social-network-api/users-api";
+import {usersAPI} from "../../api/users-api";
 
 
 export function* getUsers (payload: any): any {
