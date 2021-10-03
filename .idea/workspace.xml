@@ -1,30 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eb5efab3-75ac-4b03-b631-fe1de65d016b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/api/weather-api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/weather/reducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/weather/sagas.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/weather/selectors.ts" afterDir="false" />
+    <list default="true" id="eb5efab3-75ac-4b03-b631-fe1de65d016b" name="Default Changelist" comment="new profile page, changed design, added save photo button">
+      <change afterPath="$PROJECT_DIR$/.firebaserc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/firebase.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/social-network-api/auth-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/auth-api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/social-network-api/chat-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/chat-api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/social-network-api/profile-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/profile-api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/social-network-api/security-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/security-api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/social-network-api/users-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/users-api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Chat/ChatPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Chat/ChatPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Profile/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Profile/Profile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/auth/sagas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth/sagas.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/chat/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/chat/reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/chat/sagas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/chat/sagas.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/profile/sagas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile/sagas.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/sagaRoot.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/sagaRoot.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/users/sagas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users/sagas.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +22,14 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="1to3SimXkSW9hf8fl1Quyiabgcv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -48,10 +39,11 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/redux" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -111,6 +103,9 @@
       <workItem from="1628332103734" duration="2643000" />
       <workItem from="1628498018862" duration="31846000" />
       <workItem from="1630430963771" duration="21870000" />
+      <workItem from="1631097982584" duration="799000" />
+      <workItem from="1631540123667" duration="1374000" />
+      <workItem from="1633269108100" duration="905000" />
     </task>
     <task id="LOCAL-00001" summary="Added users, basic profile and login pages. Added auth/me. Added theme.ts, added types.ts">
       <created>1625421466958</created>
@@ -173,6 +168,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Added users, basic profile and login pages. Added auth/me. Added theme.ts, added types.ts" />
     <MESSAGE value="changed redux logic, add some request to api" />
     <MESSAGE value="fix profile page issue" />
