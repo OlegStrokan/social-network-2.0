@@ -21,12 +21,14 @@ export const usersReducer = (state = initialState, action: ActionsTypes): Initia
         case 'FOLLOW':
             return {
                 ...state,
-                users: updateObjectInArray(state.users, action.userId, 'id', {followed: true})
+                users: updateObjectInArray(state.users, action.userId, 'id', {followed: true}),
+                loading: false,
             }
         case 'UNFOLLOW':
             return {
                 ...state,
-                users: updateObjectInArray(state.users, action.userId, 'id', {followed: false})
+                users: updateObjectInArray(state.users, action.userId, 'id', {followed: false}),
+                loading: false,
             }
         case 'REQUEST_USERS': {
             return {...state, loading: true}
@@ -42,14 +44,15 @@ export const usersReducer = (state = initialState, action: ActionsTypes): Initia
                 ...state,
                 followingInProgress: action.isFetching
                     ? [...state.followingInProgress, action.userId]
-                    : state.followingInProgress.filter(id => id !== action.userId)
+                    : state.followingInProgress.filter(id => id !== action.userId),
+                loading: false,
             }
         }
         case 'SET_FILTER': {
             return {...state, filter: action.payload, loading: false}
         }
         case 'REQUEST_USERS_FAILED': {
-            return {...state, error: true}
+            return {...state, error: true, loading: false}
         }
         default:
             return state

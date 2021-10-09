@@ -1,10 +1,11 @@
 import React from 'react';
-import {AppBar, Button, createStyles, IconButton, makeStyles, Theme, Typography, Toolbar} from "@material-ui/core";
-import MenuIcon from '@material-ui/icons/Menu';
-import {NavLink} from "react-router-dom";
+import {NavLink, useLocation} from "react-router-dom";
 import {authActions, AuthStateType} from "../../redux/auth/reducer";
 import {useDispatch} from "react-redux";
 import {WeatherStateType} from "../../redux/weather/reducer";
+import {makeStyles} from "@mui/styles";
+import {AppBar, Button, IconButton, Theme, Toolbar, Typography} from "@mui/material";
+import MenuIcon from '@mui/icons-material/Menu';
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {
@@ -50,6 +51,7 @@ type HeaderProps = {
 export const Header: React.FC<HeaderProps> = ({weatherData, openMenu, setOpenMenu, authData}) => {
     const classes = useStyles();
     const dispatch = useDispatch();
+    const description = useLocation().pathname;
 
     const onSubmit = () => {
         dispatch(authActions.fetchedLogout())
@@ -67,7 +69,7 @@ export const Header: React.FC<HeaderProps> = ({weatherData, openMenu, setOpenMen
                     <MenuIcon/>
                 </IconButton>
                 <Typography variant="h6">
-                    Description
+                    {description.slice(1)}
                 </Typography>
                 </div>
                 <div className={classes.item}>

@@ -1,5 +1,4 @@
 import React, {ChangeEvent, useEffect, useState} from 'react';
-import {Button, Card, CardContent, makeStyles, TextField, Theme, Typography} from "@material-ui/core";
 import {useDispatch, useSelector} from "react-redux";
 import {profileActions} from "../../redux/profile/reducer";
 import {useHistory, useParams} from 'react-router-dom';
@@ -8,7 +7,9 @@ import {getUserDataSelector} from "../../redux/auth/selectors";
 import {Preloader} from "../../components/Preloader/Preloader";
 import userPhoto from '../../assets/images/userIcon.jpeg'
 import {ContactsType} from "../../types/types";
-import FavoriteIcon from '@material-ui/icons/Favorite';
+import {makeStyles} from "@mui/styles";
+import {Button, Card, CardContent, TextField, Theme, Typography} from "@mui/material";
+import {Favorite} from "@mui/icons-material";
 
 const useStyles = makeStyles((theme: Theme) => ({
     wrapper: {
@@ -143,7 +144,7 @@ export const Profile = () => {
                 dispatch(profileActions.fetchedProfileData(userId.userId));
             }
         }
-    }, [])
+    }, [authData.isAuth])
 
     if (!profileData.profile) {
         return <Preloader/>
@@ -205,7 +206,7 @@ export const Profile = () => {
                     {profileData.posts.map((post) => <Card className={classes.post} key={post.id}>
                         <img className={classes.postImg} src={profileData.profile?.photos.large || userPhoto}/>
                         <Typography variant="subtitle2" className={classes.postMessage}>{post.message}</Typography>
-                        <Typography variant="subtitle2" className={classes.likesCount}><FavoriteIcon/>{post.likesCount}</Typography>
+                        <Typography variant="subtitle2" className={classes.likesCount}><Favorite/>{post.likesCount}</Typography>
                         <Button onClick={onDeletePost} size="small" variant="contained" color="secondary" className={classes.deletePostButton}>Delete post</Button>
                     </Card>)}
                 </CardContent>

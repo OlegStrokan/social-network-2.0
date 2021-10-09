@@ -5,11 +5,12 @@ import {FilterType, usersActions} from "../../redux/users/reducer";
 import {User} from "./User";
 import {UserType} from "../../types/types";
 import {Paginator} from "../../components/Paginator/Paginator";
-import {Card, makeStyles, Typography} from "@material-ui/core";
 import {Preloader} from "../../components/Preloader/Preloader";
 import {UsersSearchForm} from "./UsersSearchForm";
 import queryString from "querystring";
 import {useHistory} from "react-router-dom";
+import {makeStyles} from "@mui/styles";
+import {Card, Typography} from "@mui/material";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -42,7 +43,6 @@ export const Users: React.FC = () => {
     const data = useSelector(getUsersSelector)
     const dispatch = useDispatch()
     const history = useHistory()
-
     useEffect(() => {
         const parsed = queryString.parse(history.location.search.substr(1)) as QueryParamsType
         let actualPage = data.currentPage

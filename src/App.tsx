@@ -3,7 +3,6 @@ import {Redirect, Route} from 'react-router-dom';
 import {Login} from "./pages/Login/Login";
 import {Users} from "./pages/Users/Users";
 import {Header} from "./components/Header/Header";
-import {makeStyles} from "@material-ui/core";
 import {Navbar} from "./components/Navbar/Navbar";
 import {useDispatch, useSelector} from "react-redux";
 import {getUserDataSelector} from "./redux/auth/selectors";
@@ -14,6 +13,9 @@ import {Profile} from "./pages/Profile/Profile";
 import {ChatPage} from "./pages/Chat/ChatPage";
 import {weatherActions} from "./redux/weather/reducer";
 import {getWeatherDataSelector} from "./redux/weather/selectors";
+import {News} from "./pages/News/News";
+import {Settings} from "./pages/Settings/Settings";
+import {makeStyles} from "@mui/styles";
 
 const useStyles = makeStyles((theme) => ({
   rootOpen: {
@@ -54,6 +56,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export function App() {
+  const classes = useStyles();
+
+
   const isInit = useSelector(getInitializeAppData)
   const authData = useSelector(getUserDataSelector)
   const weatherData = useSelector(getWeatherDataSelector);
@@ -61,12 +66,11 @@ export function App() {
   const dispatch = useDispatch()
   const [openMenu, setOpenMenu] = useState<boolean>(false);
 
-  const classes = useStyles();
 
   useEffect(() => {
     dispatch(appActions.fetchedInitialized());
     dispatch(weatherActions.fetchedWeatherData('Prague'));
-  },[])
+  },[authData.isAuth])
 
   if (!isInit) {
     return <Preloader/>
@@ -85,6 +89,10 @@ export function App() {
              render={() => <Profile/>}/>
       <Route path='/chat'
              render={() => <ChatPage/>}/>
+      <Route path='/news'
+             render={() => <News/>}/>
+      <Route path='/settings'
+             render={() => <Settings/>}/>
     </div>
   </div>
 }

@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
-import {Button, makeStyles, Typography} from "@material-ui/core";
 import cn from 'classnames'
+import {makeStyles} from "@mui/styles";
+import {Button, Typography} from '@mui/material';
 
 type PropsType = {
     totalItemsCount: number

@@ -5,6 +5,7 @@ import {initializeAppWatcher} from "./app/sagas";
 import {profileDataWatcher} from "./profile/sagas";
 import {chatWatcher} from "./chat/sagas";
 import {weatherDataWatcher} from "./weather/sagas";
+import {newsDataWatcher} from "./news/sagas";
 
 export default function* rootSaga() {
     yield all([
@@ -14,5 +15,6 @@ export default function* rootSaga() {
         profileDataWatcher(),
         chatWatcher(),
         weatherDataWatcher(),
+        newsDataWatcher(),
     ])
 }

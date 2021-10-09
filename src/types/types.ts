@@ -56,8 +56,31 @@ export type WeatherDataType = {
         sunset: number
     },
     visibility: number,
-    weather: Array<CityWeatherType>,
+    weather: CityWeatherType[],
     wind: {
         speed: number
     }
+}
+
+export type NewsContentType = {
+    author: string,
+    title: string,
+    description: string,
+    url: string,
+    source: string,
+    image: string,
+    category: string,
+    language: string,
+    country: string,
+    published_at: string
+};
+
+export type NewsType = {
+    pagination: {
+        limit: number,
+        offset: number,
+        count: number,
+        total: number
+    },
+    data: NewsContentType[],
 }

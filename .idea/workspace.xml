@@ -1,12 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eb5efab3-75ac-4b03-b631-fe1de65d016b" name="Default Changelist" comment="new profile page, changed design, added save photo button">
-      <change afterPath="$PROJECT_DIR$/.firebaserc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/firebase.json" afterDir="false" />
+    <list default="true" id="eb5efab3-75ac-4b03-b631-fe1de65d016b" name="Default Changelist" comment="firebase deploy">
+      <change afterPath="$PROJECT_DIR$/src/api/news-api.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/News/News.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Settings/Settings.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/news/reducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/news/sagas.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/news/selectors.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Paginator/Paginator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Paginator/Paginator.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Login/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Profile/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Profile/Profile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Users/User.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Users/User.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Users/Users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Users/Users.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Users/UsersSearchForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Users/UsersSearchForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/sagaRoot.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/sagaRoot.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/users/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users/reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/theme.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,23 +62,23 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/redux" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/redux" />
+      <recent name="$PROJECT_DIR$/src/pages/News" />
       <recent name="$PROJECT_DIR$/src/assets/images" />
       <recent name="$PROJECT_DIR$/src/pages" />
       <recent name="$PROJECT_DIR$/src/api/social-network-api" />
-      <recent name="$PROJECT_DIR$/src/pages/Users" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/api" />
@@ -105,7 +124,16 @@
       <workItem from="1630430963771" duration="21870000" />
       <workItem from="1631097982584" duration="799000" />
       <workItem from="1631540123667" duration="1374000" />
-      <workItem from="1633269108100" duration="905000" />
+      <workItem from="1633269108100" duration="1901000" />
+      <workItem from="1633339431023" duration="623000" />
+      <workItem from="1633352139858" duration="1242000" />
+      <workItem from="1633464401424" duration="691000" />
+      <workItem from="1633592598463" duration="9040000" />
+      <workItem from="1633610796569" duration="201000" />
+      <workItem from="1633616577149" duration="69000" />
+      <workItem from="1633617175568" duration="201000" />
+      <workItem from="1633675986128" duration="8000" />
+      <workItem from="1633773260913" duration="5489000" />
     </task>
     <task id="LOCAL-00001" summary="Added users, basic profile and login pages. Added auth/me. Added theme.ts, added types.ts">
       <created>1625421466958</created>
@@ -149,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630667204207</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="firebase deploy">
+      <created>1633270244260</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1633270244260</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,7 +210,8 @@
     <MESSAGE value="styles for users page, styles for profile page" />
     <MESSAGE value="new profile page. (delete post - doesn't work)" />
     <MESSAGE value="new profile page, changed design, added save photo button" />
-    <option name="LAST_COMMIT_MESSAGE" value="new profile page, changed design, added save photo button" />
+    <MESSAGE value="firebase deploy" />
+    <option name="LAST_COMMIT_MESSAGE" value="firebase deploy" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

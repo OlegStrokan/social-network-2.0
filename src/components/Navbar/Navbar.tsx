@@ -1,17 +1,14 @@
 import React from 'react';
-import {
-    createStyles,
-    makeStyles,
-    Theme,
-    ListItemIcon, ListItemText, ListItem, List, Card
-} from "@material-ui/core";
-import DraftsIcon from '@material-ui/icons/Drafts';
+import DraftsIcon from '@mui/icons-material/Drafts';
 import { useHistory } from 'react-router-dom';
+import {Card, List, ListItem, ListItemIcon, ListItemText, Theme} from "@mui/material";
+import {createStyles, makeStyles} from "@mui/styles";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
-            width: '225px'
+            width: '225px',
+            height: '100%'
         },
     }),
 );
@@ -28,6 +25,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
     const toUsers = () => history.push("/users", { update: true });
     const toChat = () => history.push("/chat", { update: true });
     const toNews = () => history.push("/news", { update: true });
+    const toSettings = () => history.push("/settings", { update: true });
 
     return (
         <Card className={classes.root}>
@@ -55,6 +53,12 @@ export const Navbar: React.FC<NavbarProps> = () => {
                         <DraftsIcon />
                     </ListItemIcon>
                     <ListItemText primary="News" />
+                </ListItem>
+                <ListItem button onClick={toSettings}>
+                    <ListItemIcon>
+                        <DraftsIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Settings" />
                 </ListItem>
             </List>
         </Card>

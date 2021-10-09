@@ -3,7 +3,8 @@ import React from 'react'
 import {useSelector} from 'react-redux'
 import {getUsersSelector} from "../../redux/users/selectors";
 import {FilterType} from "../../redux/users/reducer";
-import {Button, makeStyles, Typography} from "@material-ui/core";
+import {makeStyles} from "@mui/styles";
+import {Button, Typography} from "@mui/material";
 
 const useStyles = makeStyles((theme) => ({
     root: {

@@ -1,20 +1,22 @@
 import React, {useState} from 'react';
+import {useDispatch, useSelector} from "react-redux";
+import {getUserDataSelector} from "../../redux/auth/selectors";
+import { Redirect } from 'react-router-dom';
+import {authActions} from "../../redux/auth/reducer";
+import {makeStyles} from "@mui/styles";
 import {
     Button,
     Checkbox,
     Container,
     CssBaseline,
     FormControlLabel,
-    Grid, Link, makeStyles,
+    Grid, Link,
     TextField,
+    Theme,
     Typography
-} from "@material-ui/core";
-import {useDispatch, useSelector} from "react-redux";
-import {getUserDataSelector} from "../../redux/auth/selectors";
-import { Redirect } from 'react-router-dom';
-import {authActions} from "../../redux/auth/reducer";
+} from "@mui/material";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme: Theme) => ({
     paper: {
         marginTop: theme.spacing(8),
         display: 'flex',

@@ -2,7 +2,8 @@ import React from 'react'
 import userPhoto from '../../assets/images/userIcon.jpeg'
 import {NavLink} from 'react-router-dom'
 import {UserType} from '../../types/types'
-import {Button , makeStyles, Typography} from "@material-ui/core";
+import {makeStyles} from "@mui/styles";
+import {Button, Typography} from "@mui/material";
 
 type PropsType = {
     user: UserType,
@@ -30,10 +31,15 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'space-around',
         alignItems: 'center',
+    },
+    navLink: {
+       textDecoration: 'none',
+       color: 'black',
     }
 }));
 
 export const User: React.FC<PropsType> = ({user, unfollow, follow, followingInProgress}) => {
+
     const classes = useStyles();
     return (
         <div className={classes.root}>
@@ -41,7 +47,7 @@ export const User: React.FC<PropsType> = ({user, unfollow, follow, followingInPr
                 <NavLink to={'/profile/' + user.id}>
                     <img src={user.photos.small != null ? user.photos.small : userPhoto} className={classes.userPhoto}/>
                 </NavLink>
-                        <Typography variant="h6">{user.name}</Typography>
+                <Typography variant="h6"> <NavLink to={'/profile/' + user.id} className={classes.navLink}>{user.name}</NavLink></Typography>
             </div>
             <div>
                 {user.followed
