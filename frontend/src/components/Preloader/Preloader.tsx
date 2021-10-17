@@ -1,9 +1,0 @@
-import React from 'react';
-import preloader from '../../assets/images/Iphone-spinner-2.gif'
-export const Preloader = () => {
-    return (
-        <div>
-            <img src={preloader} />
-        </div>
-    );
-};
