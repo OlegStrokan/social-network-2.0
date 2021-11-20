@@ -1,19 +1,21 @@
 import {call, put, takeEvery} from "redux-saga/effects";
-import {weatherActions} from "./reducer";
 import {weatherAPI} from "../../api/weather-api";
+import {fetchedWeatherInterface, WeatherActionTypes} from "./action-types";
+import {requestWeather, requestWeatherFailed, requestWeatherSuccess} from "./action-creators";
+import {WeatherDataType} from "../../types/types";
 
 
-export function* getWeatherData(payload: any): any{
+export function* getWeatherData({payload}: fetchedWeatherInterface) {
     try {
-        yield put(weatherActions.requestWeatherData())
-        const data = yield call(weatherAPI, payload.name)
-        yield put(weatherActions.weatherDataSuccess(data))
+        yield put(requestWeather())
+        const data: WeatherDataType = yield call(weatherAPI, payload)
+        yield put(requestWeatherSuccess(data))
     }
     catch (error) {
-        yield put(weatherActions.initializedFailed())
+        yield put(requestWeatherFailed(error))
     }
 }
 
 export function* weatherDataWatcher() {
-    yield takeEvery('FETCHED_WEATHER_DATA', getWeatherData);
+    yield takeEvery(WeatherActionTypes.FETCHED_WEATHER, getWeatherData);
 }

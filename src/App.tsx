@@ -12,8 +12,8 @@ import {Preloader} from "./components/Preloader/Preloader";
 import {appActions} from "./redux/app/reducer";
 import {Profile} from "./pages/Profile/Profile";
 import {ChatPage} from "./pages/Chat/ChatPage";
-import {weatherActions} from "./redux/weather/reducer";
 import {getWeatherDataSelector} from "./redux/weather/selectors";
+import {fetchedWeather} from "./redux/weather/action-creators";
 
 const useStyles = makeStyles((theme) => ({
   rootOpen: {
@@ -65,7 +65,7 @@ export function App() {
 
   useEffect(() => {
     dispatch(appActions.fetchedInitialized());
-    dispatch(weatherActions.fetchedWeatherData('Prague'));
+    dispatch(fetchedWeather('Prague'));
   },[])
 
   if (!isInit) {

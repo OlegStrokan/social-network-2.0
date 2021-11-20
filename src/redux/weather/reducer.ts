@@ -1,5 +1,5 @@
-import {InferActionsTypes} from "../store";
 import {WeatherDataType} from "../../types/types";
+import {WeatherActionInterface, WeatherActionTypes} from "./action-types";
 
 let initialState = {
     weatherData: null as null | WeatherDataType,
@@ -9,38 +9,29 @@ let initialState = {
 
 export type InitialStateType = typeof initialState
 
-export const weatherReducer = (state = initialState, action: ActionsType): InitialStateType => {
+export const weatherReducer = (state = initialState, action: WeatherActionInterface): InitialStateType => {
     switch (action.type) {
-        case "REQUEST_WEATHER_DATA":
+        case WeatherActionTypes.REQUEST_WEATHER:
             return {
                 ...state,
                 loading: true,
             }
-        case 'WEATHER_DATA_SUCCESS':
+        case WeatherActionTypes.REQUEST_WEATHER_SUCCESS:
             return {
                 ...state,
-                weatherData: action.weatherData,
+                weatherData: action.payload,
                 loading: false,
             }
-        case "WEATHER_DATA_FAILED":
+        case WeatherActionTypes.REQUEST_WEATHER_FAILED:
             return {
                 ...state,
-                error: true,
-                loading: false,
+                error: action.error
             }
         default:
             return state;
     }
 }
 
-export const weatherActions = {
-    requestWeatherData: () => ({type: 'REQUEST_WEATHER_DATA'} as const),
-    weatherDataSuccess: (weatherData: WeatherDataType) => ({type: 'WEATHER_DATA_SUCCESS', weatherData} as const),
-    initializedFailed: () => ({type: 'WEATHER_DATA_FAILED'} as const),
-    fetchedWeatherData: (name: string) => ({type: 'FETCHED_WEATHER_DATA', name} as const),
-}
-
 export type WeatherStateType = typeof initialState
-type ActionsType = InferActionsTypes<typeof weatherActions>
 
 

@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+    <list default="true" id="e50d6ab9-d643-48c2-8003-06d49b84f6e6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/redux/weather/action-creators.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/weather/action-types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/weather/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/weather/reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/weather/sagas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/weather/sagas.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,18 +30,6 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/frontend/src/api/auth-api.ts" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/frontend/src/api/chat-api.ts" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/frontend/src/api/instance.ts" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/frontend/src/api/users-api.ts" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/frontend/src/api/profile-api.ts" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/frontend/src/api/weather-api.ts" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/frontend/src/api/security-api.ts" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/frontend/src/pages/Chat/ChatPage.tsx" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/frontend/src/pages/News/News.tsx" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/frontend/src/redux/app/sagas.ts" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1to3SimXkSW9hf8fl1Quyiabgcv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -55,16 +52,16 @@
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
-    <property name="ts.external.directory.path" value="$PROJECT_DIR$/backend/node_modules/typescript/lib" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/redux" />
       <recent name="$PROJECT_DIR$/src/pages/News" />
       <recent name="$PROJECT_DIR$/src/assets/images" />
       <recent name="$PROJECT_DIR$/src/pages" />
-      <recent name="$PROJECT_DIR$/src/api/social-network-api" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/frontend" />
@@ -89,7 +86,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="eb5efab3-75ac-4b03-b631-fe1de65d016b" name="Default Changelist" comment="" />
+      <changelist id="e50d6ab9-d643-48c2-8003-06d49b84f6e6" name="Default Changelist" comment="" />
       <created>1623421616940</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -125,6 +122,7 @@
       <workItem from="1633878787926" duration="123000" />
       <workItem from="1634481421398" duration="677000" />
       <workItem from="1634482502028" duration="25000" />
+      <workItem from="1637417520941" duration="3368000" />
     </task>
     <task id="LOCAL-00001" summary="Added users, basic profile and login pages. Added auth/me. Added theme.ts, added types.ts">
       <created>1625421466958</created>
@@ -182,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633789609232</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="version 1.0.0">
+      <created>1637417571401</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1637417571401</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,7 +218,8 @@
     <MESSAGE value="new profile page, changed design, added save photo button" />
     <MESSAGE value="firebase deploy" />
     <MESSAGE value="added news page, types for news, redux for news, update material ui to mui" />
-    <option name="LAST_COMMIT_MESSAGE" value="added news page, types for news, redux for news, update material ui to mui" />
+    <MESSAGE value="version 1.0.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 1.0.0" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
