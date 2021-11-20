@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eb5efab3-75ac-4b03-b631-fe1de65d016b" name="Default Changelist" comment="new profile page, changed design, added save photo button" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,6 +22,18 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/frontend/src/api/auth-api.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/frontend/src/api/chat-api.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/frontend/src/api/instance.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/frontend/src/api/users-api.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/frontend/src/api/profile-api.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/frontend/src/api/weather-api.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/frontend/src/api/security-api.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/frontend/src/pages/Chat/ChatPage.tsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/frontend/src/pages/News/News.tsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/frontend/src/redux/app/sagas.ts" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectId" id="1to3SimXkSW9hf8fl1Quyiabgcv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -33,6 +44,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -42,19 +54,20 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
-    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/backend/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/redux" />
+      <recent name="$PROJECT_DIR$/src/pages/News" />
       <recent name="$PROJECT_DIR$/src/assets/images" />
       <recent name="$PROJECT_DIR$/src/pages" />
       <recent name="$PROJECT_DIR$/src/api/social-network-api" />
-      <recent name="$PROJECT_DIR$/src/pages/Users" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend" />
       <recent name="$PROJECT_DIR$/src/api" />
     </key>
   </component>
@@ -98,7 +111,20 @@
       <workItem from="1630430963771" duration="21870000" />
       <workItem from="1631097982584" duration="799000" />
       <workItem from="1631540123667" duration="1374000" />
-      <workItem from="1633269108100" duration="905000" />
+      <workItem from="1633269108100" duration="1901000" />
+      <workItem from="1633339431023" duration="623000" />
+      <workItem from="1633352139858" duration="1242000" />
+      <workItem from="1633464401424" duration="691000" />
+      <workItem from="1633592598463" duration="9040000" />
+      <workItem from="1633610796569" duration="201000" />
+      <workItem from="1633616577149" duration="69000" />
+      <workItem from="1633617175568" duration="201000" />
+      <workItem from="1633675986128" duration="8000" />
+      <workItem from="1633773260913" duration="5489000" />
+      <workItem from="1633789555427" duration="277000" />
+      <workItem from="1633878787926" duration="123000" />
+      <workItem from="1634481421398" duration="677000" />
+      <workItem from="1634482502028" duration="25000" />
     </task>
     <task id="LOCAL-00001" summary="Added users, basic profile and login pages. Added auth/me. Added theme.ts, added types.ts">
       <created>1625421466958</created>
@@ -142,7 +168,21 @@
       <option name="project" value="LOCAL" />
       <updated>1630667204207</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="firebase deploy">
+      <created>1633270244260</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1633270244260</updated>
+    </task>
+    <task id="LOCAL-00008" summary="added news page, types for news, redux for news, update material ui to mui">
+      <created>1633789609232</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1633789609232</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,13 +202,18 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/backend" />
+    </ignored-roots>
     <MESSAGE value="Added users, basic profile and login pages. Added auth/me. Added theme.ts, added types.ts" />
     <MESSAGE value="changed redux logic, add some request to api" />
     <MESSAGE value="fix profile page issue" />
     <MESSAGE value="styles for users page, styles for profile page" />
     <MESSAGE value="new profile page. (delete post - doesn't work)" />
     <MESSAGE value="new profile page, changed design, added save photo button" />
-    <option name="LAST_COMMIT_MESSAGE" value="new profile page, changed design, added save photo button" />
+    <MESSAGE value="firebase deploy" />
+    <MESSAGE value="added news page, types for news, redux for news, update material ui to mui" />
+    <option name="LAST_COMMIT_MESSAGE" value="added news page, types for news, redux for news, update material ui to mui" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

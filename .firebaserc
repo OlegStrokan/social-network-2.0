@@ -1,7 +1,0 @@
-{
-  "projects": {
-    "default": "test-vspj-project",
-    "firebase-react-deploy": "test-vspj-project"
-  },
-  "targets": {}
-}
