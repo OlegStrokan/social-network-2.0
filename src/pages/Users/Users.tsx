@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {getUsersSelector} from "../../redux/users/selectors";
-import {FilterType, usersActions} from "../../redux/users/reducer";
+import {FilterType} from "../../redux/users/reducer";
 import {User} from "./User";
 import {UserType} from "../../types/types";
 import {Paginator} from "../../components/Paginator/Paginator";
@@ -10,6 +10,8 @@ import {Preloader} from "../../components/Preloader/Preloader";
 import {UsersSearchForm} from "./UsersSearchForm";
 import queryString from "querystring";
 import {useHistory} from "react-router-dom";
+import { fetchedUsers } from '../../redux/users/action-creators';
+import { UserRequestType } from '../../api/users-api';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -63,8 +65,14 @@ export const Users: React.FC = () => {
                 actualFilter = {...actualFilter, friend: false}
                 break;
         }
+        const dataForRequest = {
+            currentPage: actualPage,
+            pageSize: data.pageSize,
+            term: data.filter.term,
+            friend: data.filter.friend
+        }
 
-        dispatch(usersActions.fetchedUsers(actualPage, data.pageSize, actualFilter.term, actualFilter.friend))
+        dispatch(fetchedUsers(dataForRequest))
     }, [])
 
     useEffect(() => {
@@ -80,16 +88,16 @@ export const Users: React.FC = () => {
     }, [data.filter, data.currentPage, history])
 
     const follow = (userId: number) => {
-        dispatch(usersActions.fetchedFollow(userId));
+        dispatch(fetchedFollow(userId));
     }
     const unfollow = (userId: number) => {
-        dispatch(usersActions.fetchedUnfollow(userId));
+        dispatch(fetchedUnfollow(userId));
     }
     const onPageChanged = (pageNumber: number) => {
-        dispatch(usersActions.fetchedUsers(pageNumber, data.pageSize))
+        dispatch(fetchedUsers(pageNumber, data.pageSize))
     }
     const onFilterChanged = (filter: FilterType) => {
-        dispatch(usersActions.fetchedUsers(1, data.pageSize, filter.term, filter.friend))
+        dispatch(fetchedUsers(1, data.pageSize, filter.term, filter.friend))
     }
 
     if (data.loading) {

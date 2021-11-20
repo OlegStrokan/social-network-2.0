@@ -8,27 +8,27 @@ export enum WeatherActionTypes {
     FETCHED_WEATHER = 'FETCHED_WEATHER',
 }
 
-export interface requestWeatherInterface extends Action<WeatherActionTypes> {
+export interface RequestWeatherInterface extends Action<WeatherActionTypes> {
     type: WeatherActionTypes.REQUEST_WEATHER,
 }
 
-export interface requestWeatherSuccessInterface extends Action<WeatherActionTypes> {
+export interface RequestWeatherSuccessInterface extends Action<WeatherActionTypes> {
     type: WeatherActionTypes.REQUEST_WEATHER_SUCCESS,
     payload: WeatherDataType,
 }
 
-export interface requestWeatherFailedInterface extends Action<WeatherActionTypes> {
+export interface RequestWeatherFailedInterface extends Action<WeatherActionTypes> {
     type: WeatherActionTypes.REQUEST_WEATHER_FAILED,
     error: any,
 }
 
-export interface fetchedWeatherInterface extends Action<WeatherActionTypes> {
+export interface FetchedWeatherInterface extends Action<WeatherActionTypes> {
     type: WeatherActionTypes.FETCHED_WEATHER,
     payload: string;
 }
 
 export type WeatherActionInterface =
-    requestWeatherInterface
-| requestWeatherSuccessInterface
-| requestWeatherFailedInterface
-| fetchedWeatherInterface
+    RequestWeatherInterface
+| RequestWeatherSuccessInterface
+| RequestWeatherFailedInterface
+| FetchedWeatherInterface
