@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e50d6ab9-d643-48c2-8003-06d49b84f6e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/redux/weather/action-creators.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/weather/action-types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/weather/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/weather/reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/weather/sagas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/weather/sagas.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/users-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/users-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Profile/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Profile/Profile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/profile/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile/reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +23,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -52,7 +54,7 @@
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
-    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -219,7 +221,8 @@
     <MESSAGE value="firebase deploy" />
     <MESSAGE value="added news page, types for news, redux for news, update material ui to mui" />
     <MESSAGE value="version 1.0.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 1.0.0" />
+    <MESSAGE value="version 1.0.2. Add action types (users) - not complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 1.0.2. Add action types (users) - not complete" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -9,7 +9,7 @@ let initialState = {
     profile: null as ProfileType | null,
     status: '',
     loading: false,
-    error: true
+    error: false,
 }
 
 export const profileReducer = (state = initialState, action: ActionsType): ProfileStateType => {
@@ -85,7 +85,7 @@ export const profileActions = {
     fetchedNewProfileData: ( profile: ProfileType) => ({type: 'FETCHED_NEW_USER_PROFILE', profile} as const),
     fetchedStatus: ( userId: number ) => ({type: 'FETCHED_STATUS', userId} as const),
     fetchedNewStatus: ( status: string ) => ({type: 'FETCHED_NEW_STATUS', status} as const),
-    fetchedPhoto: ( photos: PhotosType ) => ({type: 'FETCHED_PHOTO', photos} as const),
+    fetchedPhoto: (photos: PhotosType) => ({type: 'FETCHED_PHOTO', photos} as const),
 }
 
 export type ProfileStateType = typeof initialState

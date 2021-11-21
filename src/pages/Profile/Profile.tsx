@@ -7,9 +7,10 @@ import {getProfileDataSelector} from "../../redux/profile/selectors";
 import {getUserDataSelector} from "../../redux/auth/selectors";
 import {Preloader} from "../../components/Preloader/Preloader";
 import userPhoto from '../../assets/images/userIcon.jpeg'
-import {ContactsType} from "../../types/types";
+import { ContactsType, ProfileType } from '../../types/types';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-
+import * as yup from 'yup';
+import { useFormik } from 'formik';
 const useStyles = makeStyles((theme: Theme) => ({
     wrapper: {
         margin: '0 10px',
@@ -127,6 +128,11 @@ export const Profile = () => {
         dispatch(profileActions.deletePost(post.id))
     }
 
+    const changeEditMode = () => {
+        setEditMode(!editMode)
+    }
+
+
     useEffect(() => {
         if (!userId?.userId) {
             userId = authData.userId
@@ -144,6 +150,41 @@ export const Profile = () => {
             }
         }
     }, [])
+
+    const validationSchema = yup.object({
+        fullName: yup
+          .string()
+          .min(8, 'Full name should be of minimum 2 characters length')
+          .required('Email is required'),
+        lookingForAJob: yup
+          .string()
+          .required('Password is required'),
+        aboutMe: yup
+          .string()
+          .min(8, 'Full name should be of minimum 2 characters length')
+          .required('Email is required'),
+        skills: yup
+          .string()
+          .required('Skills is required'),
+        contacts: yup
+          .string()
+          .min(8, 'Full name should be of minimum 2 characters length')
+          .required('Email is required'),
+    });
+
+        const formik = useFormik({
+            initialValues: {} as ProfileType,
+            validationSchema: validationSchema,
+            onSubmit: (values) => {
+                // @ts-ignore
+                profileActions.fetchedNewProfileData(values).then(
+                  () => {
+                      setEditMode(false);
+                  }
+                );
+            },
+        });
+
 
     if (!profileData.profile) {
         return <Preloader/>
@@ -163,30 +204,99 @@ export const Profile = () => {
                     </Button>}
 
                 </div>
-                <div>
-                    <Typography variant="h4" className={classes.fullName}>{profileData.profile.fullName}</Typography>
-                    <Typography variant="h6"><b>Looking for a
-                        job:</b> {profileData.profile.lookingForAJob ? "yes" : 'no'}</Typography>
-                    <hr className={classes.line}/>
-                    <Typography variant="h6"><b>About me:</b> {profileData.profile.aboutMe}</Typography>
-                    <hr className={classes.line}/>
-                    {
-                        profileData.profile.lookingForAJob &&
-                        <Typography variant="h6"><b>My skills:</b> {profileData.profile.lookingForAJobDescription}
-                        </Typography>
-                    }
-                </div>
-                <div className={classes.contacts}>
-                    <Typography variant="h6"> <b>Contacts:</b>
-                        <hr className={classes.line}/>
+                {editMode ?
+                  <div>
+                      <div>
+                          <form onSubmit={formik.handleSubmit}>
+                              <TextField
+                                fullWidth
+                                id="fullname"
+                                name="fullname"
+                                label="Full name"
+                                value={formik.values.fullName}
+                                onChange={formik.handleChange}
+                                error={formik.touched.fullName && Boolean(formik.errors.fullName)}
+                                helperText={formik.touched.fullName && formik.errors.fullName}
+                              />
+                              <TextField
+                                fullWidth
+                                id="lookingForAJob"
+                                name="lookingForAJob"
+                                label="Looking for a job"
+                                value={formik.values.lookingForAJob}
+                                onChange={formik.handleChange}
+                                error={formik.touched.lookingForAJob && Boolean(formik.errors.lookingForAJob)}
+                                helperText={formik.touched.lookingForAJob && formik.errors.lookingForAJob}
+                              />
+                              <TextField
+                                fullWidth
+                                id="aboutMe"
+                                name="aboutMe"
+                                label="About me"
+                                value={formik.values.aboutMe}
+                                onChange={formik.handleChange}
+                                error={formik.touched.aboutMe && Boolean(formik.errors.aboutMe)}
+                                helperText={formik.touched.aboutMe && formik.errors.aboutMe}
+                              />
+                              <TextField
+                                fullWidth
+                                id="skills"
+                                name="skills"
+                                label="Skills"
+                                value={formik.values.skills}
+                                onChange={formik.handleChange}
+                                error={formik.touched.skills && Boolean(formik.errors.skills)}
+                                helperText={formik.touched.skills && formik.errors.skills}
+                              />
+                              <Typography variant="h6"> <b>Contacts:</b>
+                                  {
+                                      Object
+                                        .keys(profileData.profile.contacts)
+                                        .map((key) => {
+                                            return <TextField
+                                              fullWidth
+                                              id={'contacts.' + key}
+                                              name={'contacts.' + key}
+                                              label={key}
+                                              value={formik.values.contacts}
+                                              onChange={formik.handleChange}
+                                              error={formik.touched.contacts && Boolean(formik.errors.contacts)}
+                                              helperText={formik.touched.contacts && formik.errors.contacts}
+                                            />
+                                        })}</Typography>
+                              <Button color="primary" variant="contained" fullWidth type="submit">
+                                  Submit
+                              </Button>
+                          </form>
+                      </div>
+                      <Button onClick={changeEditMode} size="large" variant="contained" component="label" color="primary">Back</Button>
+
+                  </div>
+                  :
+                  <>
+                      <Button onClick={changeEditMode} size="large" variant="contained" component="label" color="primary">Edit</Button>
+                    <div>
+                        <Typography variant="h4">{profileData.profile.fullName}</Typography>
+                        <Typography variant="h6"><b>Looking for a
+                            job:</b> {profileData.profile.lookingForAJob ? "yes" : 'no'}</Typography>
+                        <Typography variant="h6"><b>About me:</b> {profileData.profile.aboutMe}</Typography>
                         {
-                            Object
-                                .keys(profileData.profile.contacts)
-                                .map((key) => {
-                                    return <Contact key={key} contactTitle={key}
-                                                    contactValue={profileData.profile?.contacts[key as keyof ContactsType] || 'contacts'}/>
-                                })}</Typography>
-                </div>
+                            profileData.profile.lookingForAJob &&
+                            <Typography variant="h6"><b>My skills:</b> {profileData.profile.skills}
+                            </Typography>
+                        }
+                    </div>
+                    <div className={classes.contacts}>
+                    <Typography variant="h6"> <b>Contacts:</b>
+                {
+                    Object
+                    .keys(profileData.profile.contacts)
+                    .map((key) => {
+                    return <Contact key={key} contactTitle={key}
+                    contactValue={profileData.profile?.contacts[key as keyof ContactsType] || 'contacts'}/>
+                })}</Typography>
+                    </div>
+                    </>}
             </CardContent>
             <Card  className={classes.background}>
                 <CardContent className={classes.posts}>
